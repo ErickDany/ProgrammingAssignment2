@@ -3,8 +3,19 @@
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
-
+makeCacheMatrix <- function(x = matrix()) 
+{
+        inv<-NULL
+        set<-function(y)
+        {
+                x<<-y
+                inc<-NULL
+        }
+        
+        get<-function() x
+        setInverse<-function(inverse)inv<<-inverse
+        getInverse<-function() inv
+        list(get=get, set=set, getInverse=getInverse, setInverse=setInverse)
 }
 
 
